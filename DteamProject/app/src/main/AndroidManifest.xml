@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DteamProject">
-        <activity android:name=".ModyfiyActivity"></activity>
+        <activity android:name=".NavActivity"></activity>
+        <activity android:name=".ModyfiyActivity" />
         <activity android:name=".AddPersonActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".SetLocActivity" />
         <activity android:name=".EquestActivity" />
-        <activity android:name=".HamActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
