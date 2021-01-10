@@ -2,27 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dteamproject">
 
+    Manifest.permission.INTERNET,
+    Manifest.permission.ACCESS_NETWORK_STATE,
+    Manifest.permission.ACCESS_WIFI_STATE,
+    Manifest.permission.READ_EXTERNAL_STORAGE,
+    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+    Manifest.permission.CAMERA
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DteamProject">
+        android:theme="@style/Theme.DteamProject"
+
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+        <!-- https가 아니라 http로 오더라도 그냥 허가하는 부분 -->
+
+        <!-- http 라이브러리 사용 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <activity android:name=".NavActivity"></activity>
         <activity android:name=".ModyfiyActivity" />
         <activity android:name=".AddPersonActivity" />
-        <activity android:name=".JoinActivity" />
         <activity android:name=".SetLocActivity" />
         <activity android:name=".EquestActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- API24 이상부터 Url 이 file:// 로 시작되면 안되서 content:// 으로 변환시키는 부분 -->
+        <provider
+            android:authorities="${applicationId}.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+        </provider>
+
     </application>
+
 
 </manifest>

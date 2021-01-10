@@ -83,24 +83,21 @@ public class NavActivity extends AppCompatActivity {
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.nav_home){
+        if(id == R.id.nav_notice){
             Toast.makeText(this, "첫번째 메뉴 선택", Toast.LENGTH_SHORT).show();
             onFragmentSelected(0, null);
-        }else if(id == R.id.nav_gallery){
+        }else if(id == R.id.nav_FAQ){
             Toast.makeText(this, "두번째 메뉴 선택", Toast.LENGTH_SHORT).show();
             onFragmentSelected(1, null);
-        }else if(id == R.id.nav_slideshow){
+        }else if(id == R.id.nav_placeAlarm){
             Toast.makeText(this, "세번째 메뉴 선택", Toast.LENGTH_SHORT).show();
             onFragmentSelected(2, null);
-        }else if(id == R.id.nav_manage){
+        }else if(id == R.id.nav_EquestActivity){
             Toast.makeText(this, "네번째 메뉴 선택", Toast.LENGTH_SHORT).show();
             onFragmentSelected(3, null);
-        }else if(id == R.id.nav_share){
+        }else if(id == R.id.nav_settings){
             Toast.makeText(this, "다섯번째 메뉴 선택", Toast.LENGTH_SHORT).show();
             onFragmentSelected(4, null);
-        }else if(id == R.id.nav_send) {
-            Toast.makeText(this, "여섯번째 메뉴 선택", Toast.LENGTH_SHORT).show();
-            onFragmentSelected(5, null);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
