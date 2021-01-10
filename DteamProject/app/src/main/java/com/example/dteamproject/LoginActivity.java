@@ -78,6 +78,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // 회원 가입 버튼
+        btnJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 회원가입 화면
+                Intent intent = new Intent(getApplicationContext(), JoinActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
     private void checkDangerousPermissions() {
