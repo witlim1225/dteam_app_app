@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPersonActivity2">
+
+    <TextView
+        android:id="@+id/personNum"
+        android:layout_width="252dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="추가할 친구(기기) 번호를 입력하세요."
+        android:textColor="#050505"
+        android:textSize="18sp"
+        android:background="@drawable/outline"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnQrAdd" />
+
+    <Button
+        android:id="@+id/btnQrAdd"
+        android:layout_width="225dp"
+        android:layout_height="56dp"
+        android:text="상대방 QR코드 인식"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="374dp"
+        android:layout_height="1dp"
+        android:background="#6C6767"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myNum"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
+        android:id="@+id/myNum"
+        android:layout_width="254dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="304dp"
+        android:background="@drawable/outline"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="내 번호"
+        android:textColor="#050505"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myQr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="내 QR 코드"
+        android:textColor="#050505"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/myQrImg"
+        android:layout_width="137dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myQr"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <Button
+        android:id="@+id/btnPersonAdd"
+        android:layout_width="131dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="28dp"
+        android:text="추가하기"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personNum" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
