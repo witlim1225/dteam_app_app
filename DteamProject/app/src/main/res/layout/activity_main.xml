@@ -6,27 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnGroupTalk"
-        android:layout_width="201dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="236dp"
-        android:text="그룹톡"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnAddPerson"
-        android:layout_width="195dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="364dp"
-        android:text="친구 추가"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!--네비게이션 바-->
     <androidx.drawerlayout.widget.DrawerLayout
@@ -41,6 +21,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/btnGroupTalk"
+                android:layout_width="201dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="236dp"
+                android:text="그룹톡"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnAddPerson"
+                android:layout_width="195dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="116dp"
+                android:layout_marginTop="364dp"
+                android:text="친구 추가"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
