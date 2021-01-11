@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".GtalkActivity">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="220dp"
+        android:layout_height="95dp"
+        android:text="그룹톡"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="155dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

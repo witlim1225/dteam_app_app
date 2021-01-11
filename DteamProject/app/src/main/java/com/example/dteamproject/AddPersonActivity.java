@@ -26,7 +26,7 @@ public class AddPersonActivity extends AppCompatActivity {
         btnParents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddPersonActivity2.class);
+                Intent intent = new Intent(AddPersonActivity.this, AddPersonActivity2.class);
                 startActivity(intent);
                 Toast.makeText(AddPersonActivity.this,
                         "친구(기기) 추가 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
@@ -37,7 +37,7 @@ public class AddPersonActivity extends AppCompatActivity {
         btnKid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddPersonActivity2.class);
+                Intent intent = new Intent(AddPersonActivity.this, AddPersonActivity2.class);
                 startActivity(intent);
                 Toast.makeText(AddPersonActivity.this,
                         "친구(기기) 추가 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
