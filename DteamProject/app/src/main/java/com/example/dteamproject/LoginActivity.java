@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginDTO = null;
                 if(etId.getText().toString().length() != 0 && etPasswd.getText().toString().length() != 0){
                     String id = etId.getText().toString();
                     String passwd = etPasswd.getText().toString();

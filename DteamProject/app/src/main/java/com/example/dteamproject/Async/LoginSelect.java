@@ -96,15 +96,15 @@ public class LoginSelect extends AsyncTask<Void, Void, Void> {
         reader.beginObject();
         while (reader.hasNext()) {
             String readStr = reader.nextName();
-            if (readStr.equals("id")) {
+            if (readStr.equals("mb_id")) {
                 id = reader.nextString();
-            } else if (readStr.equals("name")) {
+            } else if (readStr.equals("mb_name")) {
                 name = reader.nextString();
-            } else if (readStr.equals("phonenumber")) {
+            } else if (readStr.equals("mb_phonenum")) {
                 phonenumber = reader.nextString();
-            } else if (readStr.equals("birth")) {
+            } else if (readStr.equals("mb_birth")) {
                 birth = reader.nextString();
-            } else if (readStr.equals("email")) {
+            } else if (readStr.equals("mb_email")) {
                 email = reader.nextString();
             }else {
                 reader.skipValue();
