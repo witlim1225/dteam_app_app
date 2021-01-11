@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnGroupTalk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GtalkActivity1.class);
+                Intent intent = new Intent(MainActivity.this, GtalkActivity2.class);
                 startActivity(intent);
             }
         });

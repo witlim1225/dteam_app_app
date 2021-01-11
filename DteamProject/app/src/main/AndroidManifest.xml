@@ -18,10 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DteamProject"
         android:usesCleartextTraffic="true">
-
-
-        <activity android:name=".AddPersonActivity2"></activity>
-        <!-- https가 아니라 http로 오더라도 그냥 허가하는 부분 -->
+        <activity android:name=".AddPersonActivity2" /> <!-- https가 아니라 http로 오더라도 그냥 허가하는 부분 -->
         <!-- http 라이브러리 사용 -->
         <uses-library
             android:name="org.apache.http.legacy"
@@ -40,9 +37,9 @@
         <activity android:name=".AddPersonActivity" />
         <activity android:name=".SetLocActivity" />
         <activity android:name=".EquestActivity" />
-        <activity android:name=".GtalkActivity1"/>
-        <activity android:name=".GtalkActivity2"/>
-        <activity android:name=".GtalkActivity3"/>
+        <activity android:name=".GtalkActivity1" />
+        <activity android:name=".GtalkActivity2" />
+        <activity android:name=".GtalkActivity3" />
         <activity android:name=".MainActivity" /> <!-- API24 이상부터 Url 이 file:// 로 시작되면 안되서 content:// 으로 변환시키는 부분 -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -53,8 +50,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-
-
     </application>
 
 </manifest>
