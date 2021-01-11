@@ -15,7 +15,7 @@ public class AddPersonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_person);
 
         btnParents = findViewById(R.id.btnParents);//부모 추가버튼
         btnKid = findViewById(R.id.btnKid);//아이 추가버튼
