@@ -2,9 +2,11 @@ package com.example.dteamproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class AddPersonActivity extends AppCompatActivity {
 
@@ -13,7 +15,7 @@ public class AddPersonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_person);
+        setContentView(R.layout.activity_main);
 
         btnParents = findViewById(R.id.btnParents);//부모 추가버튼
         btnKid = findViewById(R.id.btnKid);//아이 추가버튼
@@ -24,7 +26,10 @@ public class AddPersonActivity extends AppCompatActivity {
         btnParents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), AddPersonActivity2.class);
+                startActivity(intent);
+                Toast.makeText(AddPersonActivity.this,
+                        "친구(기기) 추가 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -32,7 +37,10 @@ public class AddPersonActivity extends AppCompatActivity {
         btnKid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), AddPersonActivity2.class);
+                startActivity(intent);
+                Toast.makeText(AddPersonActivity.this,
+                        "친구(기기) 추가 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
