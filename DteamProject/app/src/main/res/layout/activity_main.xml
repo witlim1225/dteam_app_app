@@ -6,13 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <Button
+        android:id="@+id/btnGroupTalk"
+        android:layout_width="201dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="236dp"
+        android:text="그룹톡"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAddPerson"
+        android:layout_width="195dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="364dp"
+        android:text="친구 추가"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--네비게이션 바-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/Widget.AppCompat.Toolbar"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            </FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:src="@android:drawable/ic_dialog_email"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/main_drawer_menu"/>
+
+
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
