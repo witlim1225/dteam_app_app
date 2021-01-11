@@ -35,12 +35,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".JoinActivity"/>
-        <activity android:name=".NavActivity"></activity>
+        <activity android:name=".NavActivity"/>
         <activity android:name=".ModyfiyActivity" />
         <activity android:name=".AddPersonActivity" />
         <activity android:name=".SetLocActivity" />
         <activity android:name=".EquestActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".GtalkActivity1"/>
+        <activity android:name=".GtalkActivity2"/>
+        <activity android:name=".GtalkActivity3"/>
+
+
 
         <!-- API24 이상부터 Url 이 file:// 로 시작되면 안되서 content:// 으로 변환시키는 부분 -->
         <provider
