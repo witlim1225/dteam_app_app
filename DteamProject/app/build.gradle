@@ -69,4 +69,7 @@ dependencies {
     //QR코드 사용을 위한 zxing 라이브러리
     implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
     implementation 'com.google.zxing:core:3.3.0'
+
+    //구글맵
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
