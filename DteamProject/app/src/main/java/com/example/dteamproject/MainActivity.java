@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //네비게이션 바
+      /*  //네비게이션 바
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        /*getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();*/
+        *//*getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();*//*
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        /*navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.*/
+        *//*navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.*//*
 
 
         
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*@Override
+    *//*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
@@ -126,10 +126,10 @@ public class MainActivity extends AppCompatActivity {
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
-    }*/
+    }*//*
 
     public void onFragmentSelected(int position, Bundle bundle){
-        /*Fragment curFragment = null;
+        *//*Fragment curFragment = null;
         if(position == 0){
             curFragment = fragment1;
             toolbar.setTitle("첫번째 화면");
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             toolbar.setTitle("여섯번째 화면");
         }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, curFragment).commit();*/
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, curFragment).commit();*//*
     }
 
     @Override
@@ -161,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
             super.onBackPressed();
         }
+
+        */
     }
-        
 }
