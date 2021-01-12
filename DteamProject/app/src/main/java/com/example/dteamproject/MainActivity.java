@@ -18,6 +18,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+//loginDTO가져온다.
+import static com.example.dteamproject.LoginActivity.loginDTO;
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         btnGroupTalk = findViewById(R.id.btnGroupTalk);
         btnAddPerson = findViewById(R.id.btnAddPerson);
@@ -63,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         /*navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.*/
 
+
+        
         //헤드드로어에 로그인정보 표시하기
         int userlevel = 1; // 0:일반유저, 1:관리자
-        String loginID = "BTS";
         View headerView = navigationView.getHeaderView(0);
         ImageView imageView = headerView.findViewById(R.id.loginImage);
         //imageView.setImageResource(R.drawable.su);
@@ -87,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView navLoginId = headerView.findViewById(R.id.loginId);
-        navLoginId.setText("반갑습니다." + loginID);
+        navLoginId.setText("반갑습니다. : " + loginDTO.getId() + "님");
 
         TextView navLoginStr = headerView.findViewById(R.id.loginStr);
+        navLoginStr.setText(loginDTO.getEmail());
 
 
 

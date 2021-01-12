@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -62,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
              if(loginDTO != null){
-                Toast.makeText(LoginActivity.this, "로그인 되었습니다 !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, loginDTO.getId() + "로그인 되었습니다 !!!", Toast.LENGTH_SHORT).show();
                 Log.d("main:login", loginDTO.getId() + "님 로그인 되었습니다 !!!");
 
                 // 로그인 정보에 값이 있으면 로그인이 되었으므로 메인화면으로 이동
