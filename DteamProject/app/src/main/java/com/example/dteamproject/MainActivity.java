@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //네비게이션 바
-        toolbar = findViewById(R.id.toolbar);
+       /* toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -60,28 +60,28 @@ public class MainActivity extends AppCompatActivity {
                 R.string.navi_drawer_open, R.string.navi_drawer_close);
 
         drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        toggle.syncState();*/
 
         /*getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();*/
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        //NavigationView navigationView = findViewById(R.id.nav_view);
         /*navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.*/
 
 
         
         //헤드드로어에 로그인정보 표시하기
         int userlevel = 1; // 0:일반유저, 1:관리자
-        View headerView = navigationView.getHeaderView(0);
+       /* View headerView = navigationView.getHeaderView(0);
         ImageView imageView = headerView.findViewById(R.id.loginImage);
         //imageView.setImageResource(R.drawable.su);
         //Glide를 이용해서 imageview를 동그랗게(circleCrop()) 만듬.
-        Glide.with(this).load(R.drawable.ic_launcher_background).circleCrop().into(imageView);
+        Glide.with(this).load(R.drawable.ic_launcher_background).circleCrop().into(imageView);*/
 
         if(userlevel == 1){
-            navigationView.getMenu().findItem(R.id.communi).setVisible(true);
+            //navigationView.getMenu().findItem(R.id.communi).setVisible(true);
         }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         navLoginId.setText("반갑습니다. : " + loginDTO.getId() + "님");
 
         TextView navLoginStr = headerView.findViewById(R.id.loginStr);
-        navLoginStr.setText(loginDTO.getEmail());
+        navLoginStr.setText(loginDTO.getEmail());*/
 
 
 
@@ -155,12 +155,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START);
         }else {
             super.onBackPressed();
-        }
+        }*/
     }
         
 }
