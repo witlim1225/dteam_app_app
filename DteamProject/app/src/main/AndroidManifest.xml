@@ -23,6 +23,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
+            android:value="@string/API_KEY"/>
         <activity android:name=".AddPersonActivity2" /> <!-- https가 아니라 http로 오더라도 그냥 허가하는 부분 -->
         <!-- http 라이브러리 사용 -->
         <uses-library
