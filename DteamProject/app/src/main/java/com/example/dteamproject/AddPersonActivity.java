@@ -13,6 +13,8 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -26,7 +28,7 @@ import java.util.UUID;
 public class AddPersonActivity extends AppCompatActivity {
 
     Button btnParents, btnKid, connWear; //추가하기, 웨어러블 연결 버튼
-
+    Switch btOnOff; //블루투스 온오프 스위치버튼
     BluetoothAdapter mBluetoothAdapter; //블루투스 어댑터
     Set<BluetoothDevice> mPairedDevices; //블루투스 디바이스 데이터 셋
     List<String> mListPairedDevices; // 페어링 된 기기 목록
@@ -53,7 +55,7 @@ public class AddPersonActivity extends AppCompatActivity {
         btnParents = findViewById(R.id.btnParents);//부모 추가버튼
         btnKid = findViewById(R.id.btnKid);//아이 추가버튼
         connWear = findViewById(R.id.connWear);//웨어러블 연결
-
+        btOnOff = findViewById(R.id.btOnOff);
 
         //부모 추가 버튼 클릭시
         btnParents.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +78,23 @@ public class AddPersonActivity extends AppCompatActivity {
                         "친구(기기) 추가 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //블루투스 On/Off 스위치
+        btOnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    blueoothOn();
+                    Toast.makeText(getApplicationContext(),
+                            "블루투스 켜짐", Toast.LENGTH_SHORT).show();
+                }else{
+                    bluetoothOff();
+                    Toast.makeText(getApplicationContext(),
+                            "블루투스 꺼짐", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });//btnOnOff
+        
         //기기가 블루투스를 지원하는지 알아오는 메소드
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -89,6 +108,26 @@ public class AddPersonActivity extends AppCompatActivity {
 
         });
     }//onCreate
+
+    //블루투스 On 메소드
+    private void blueoothOn() {
+        //스위치가 정상 작동하는지 테스트.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("테스트").setMessage("켜짐");
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }//blueoothOn()
+
+    //블루투스 Off 메소드
+    private void bluetoothOff() {
+        //스위치가 정상 작동하는지 테스트.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("테스트").setMessage("꺼짐");
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }//bluetoothOff()
 
     //해당 기기에 페어링 되어있는 블루투스 기기 목록을 가져오는 메소드
     void listPairedDevices(){
