@@ -1,5 +1,6 @@
 package com.example.dteamproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,9 +15,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 //loginDTO가져온다.
 import static com.example.dteamproject.LoginActivity.loginDTO;
@@ -25,14 +31,21 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     Button btnGroupTalk, btnAddPerson;
+    Button btnLogout, btnRevoke;
+    FirebaseAuth mAuth;
+
+    private GoogleSignInClient mGoogleSignInClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        btnRevoke = findViewById(R.id.btnRevoke);
+        btnLogout = findViewById(R.id.btnLogout);
         btnGroupTalk = findViewById(R.id.btnGroupTalk);
         btnAddPerson = findViewById(R.id.btnAddPerson);
+        mAuth = FirebaseAuth.getInstance();
 
         btnGroupTalk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +63,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      /*  //네비게이션 바
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
+
+        btnRevoke.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               revokeAccess();
+            }
+        });
+        /*//네비게이션 바
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -62,13 +88,11 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        *//*getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();*//*
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        *//*navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.*//*
+        navigationView.setNavigationItemSelectedListener(this);//onNavigationItemSelected()로 가게 만듬.
 
-
-        
         //헤드드로어에 로그인정보 표시하기
         int userlevel = 1; // 0:일반유저, 1:관리자
         View headerView = navigationView.getHeaderView(0);
@@ -81,27 +105,41 @@ public class MainActivity extends AppCompatActivity {
             navigationView.getMenu().findItem(R.id.communi).setVisible(true);
         }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action",
-                        Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
-
-
         TextView navLoginId = headerView.findViewById(R.id.loginId);
         navLoginId.setText("반갑습니다. : " + loginDTO.getId() + "님");
 
         TextView navLoginStr = headerView.findViewById(R.id.loginStr);
         navLoginStr.setText(loginDTO.getEmail());
+*/
 
 
 
     }
 
-    *//*@Override
+    //구글 로그아웃
+    private void signOut() {
+        // Firebase sign out
+        mAuth.signOut();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        // Google sign out
+        //mGoogleSignInClient.signOut();
+    }
+
+    //구글 회원탈퇴
+    private void revokeAccess() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        // Google revoke access
+        //mGoogleSignInClient.revokeAccess();
+    }
+
+
+}
+    /*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
@@ -153,6 +191,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, curFragment).commit();*//*
     }
 
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -162,6 +202,5 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
 
-        */
-    }
-}
+
+    }*/

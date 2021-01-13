@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 
 android {
     compileSdkVersion 30
@@ -12,6 +13,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -72,4 +74,15 @@ dependencies {
 
     //구글맵
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    //firebase연동
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
+    //firebase기반 구글 로그인
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //Cannot fit requested classes in a single dex file오류 해결을 위한 multiDexEnabled true추가 및 dependencies 추가
+    implementation 'com.android.support:multidex:2.0.1'
 }
