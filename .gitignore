@@ -1,6 +1,6 @@
 app/build/
 .idea/
-.gradle/
+.gralde/
 app/src/main/java/com/example/dteamproject/Common/CommonMethod
 app/src/main/res/values/strings
 app/google-services.json
