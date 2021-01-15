@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapsInitializer;
@@ -134,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
         LocationManager manager =
                 (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         try {
-            long minTime = 10000;
-            float minDistance = 0;
+            long minTime = 100000;
+            float minDistance = 100;
 
             manager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
@@ -202,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
             myMarker = new MarkerOptions();
             myMarker.position(
                     new LatLng(location.getLatitude(), location.getLongitude()));
-            myMarker.title("♨ 내 위치\n");
-            myMarker.snippet("여기가 어디인가");//간단하게 설명해주는 것
+            myMarker.title("내 위치\n");
+            myMarker.snippet("여기");//간단하게 설명해주는 것
             myMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.mylocation));
             map.addMarker(myMarker);
         }
