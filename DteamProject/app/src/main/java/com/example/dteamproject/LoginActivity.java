@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -48,8 +47,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText etId, etPasswd;
     Button btnLogin, btnJoin;
 
-    public LoginActivity() {
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         checkDangerousPermissions();
+
 
         etId = findViewById(R.id.etId);
         etPasswd = findViewById(R.id.etPASSWD);
@@ -172,9 +170,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        // Check if user is signed in (non-null) and update UI accordingly. 뭔지 모르겠다.
+/*        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);*/
     }
 
     //사용자가 정상적으로 로그인하면 GoogleSignInAccount 객체에서
@@ -211,7 +209,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+    //위험 권한 부여
     private void checkDangerousPermissions() {
         String[] permissions = {
                 Manifest.permission.INTERNET,
@@ -220,8 +218,13 @@ public class LoginActivity extends AppCompatActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.BLUETOOTH_ADMIN
+
+
         };
 
         int permissionCheck = PackageManager.PERMISSION_GRANTED;

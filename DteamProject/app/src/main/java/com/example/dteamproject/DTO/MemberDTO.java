@@ -1,6 +1,8 @@
 package com.example.dteamproject.DTO;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable {
     String id, passwd, name, phonenumber, birth, email;
 
     public MemberDTO(String id, String name, String phonenumber, String birth, String email) {
