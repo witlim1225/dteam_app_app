@@ -45,6 +45,7 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".ModyfiyActivity" />
         <activity android:name=".AddPersonActivity" />
+        <activity android:name=".Bluetooth"/>
         <activity android:name=".SetLocActivity" />
         <activity android:name=".EquestActivity" />
         <activity android:name=".GtalkActivity1" />
