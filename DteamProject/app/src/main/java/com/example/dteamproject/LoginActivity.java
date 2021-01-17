@@ -56,6 +56,10 @@ public class LoginActivity extends AppCompatActivity {
         checkDangerousPermissions();
 
 
+
+
+
+
         etId = findViewById(R.id.etId);
         etPasswd = findViewById(R.id.etPASSWD);
         btnLogin = findViewById(R.id.btnLogin);

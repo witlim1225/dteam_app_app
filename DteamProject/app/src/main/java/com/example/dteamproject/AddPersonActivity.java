@@ -45,7 +45,7 @@ public class AddPersonActivity extends AppCompatActivity {
 
 
         //웨어러블 연결 클릭시
-        connWear.setOnClickListener(new View.OnClickListener() {
+       /* connWear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                Intent intent = new Intent(AddPersonActivity.this, Bluetooth.class);
@@ -54,7 +54,7 @@ public class AddPersonActivity extends AppCompatActivity {
                         "블루투스 연결화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
             }
 
-        });//conWear
+        });//conWear*/
 
     }//onCreate
 
