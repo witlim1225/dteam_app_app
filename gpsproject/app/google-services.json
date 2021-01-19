@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "317594059950",
+    "project_id": "gpsproject-11503",
+    "storage_bucket": "gpsproject-11503.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317594059950:android:cd8b1160b18b3773a9993f",
+        "android_client_info": {
+          "package_name": "com.example.gpsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317594059950-f24i3ptc8vo1hdim216heglum69c3ck1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gpsproject",
+            "certificate_hash": "a28f12c678e9a7373ec8d8d38dd950423231e190"
+          }
+        },
+        {
+          "client_id": "317594059950-6rj7s28mnqle1e7870qmgl5ksh44f7gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVEybCWxubXWTDY67rLwteAWfbCJ6a4xY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317594059950-6rj7s28mnqle1e7870qmgl5ksh44f7gd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
