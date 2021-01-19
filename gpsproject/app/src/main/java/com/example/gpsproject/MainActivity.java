@@ -115,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
         btnGroupTalk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, GtalkActivity1.class);
+                startActivity(intent);
             }
         });
 
@@ -123,7 +124,8 @@ public class MainActivity extends AppCompatActivity {
         btnAddPerson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, AddPersonActivity1.class);
+                startActivity(intent);
             }
         });
 
