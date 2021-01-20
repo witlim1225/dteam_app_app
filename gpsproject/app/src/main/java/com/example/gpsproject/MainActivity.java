@@ -25,8 +25,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "main:";
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogout;
     Button btnMyLoc, btnSetLoc;
     Button btnAddPerson1, btnAddPerson2, btnAddPerson3;
+    Button btnGpsTrack;
 
     //구글 로그인 결과값 가져오기
     TextView tv_result;
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     GoogleMap map;
     MarkerOptions myMarker;
 
+    List<Location> savedLocations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
         btnAddPerson1 = findViewById(R.id.btnAddPerson1);
         btnAddPerson2 = findViewById(R.id.btnAddPerson2);
         btnAddPerson3 = findViewById(R.id.btnAddPerson3);
+
+        btnGpsTrack = findViewById(R.id.btnGpsTrack);
+        btnGpsTrack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GpsTrackActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //구글 맵
         mapfragment = (SupportMapFragment)  getSupportFragmentManager().findFragmentById(R.id.googleMap);
@@ -108,9 +122,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         //그룹톡창으로 이동
         btnGroupTalk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }//onCreate()
 
@@ -180,32 +190,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showCurrentLocation(Location location) {
-        //지도에 표시할 때 필요한 객체
-        LatLng curPoint =
-                new LatLng(location.getLatitude(), location.getLongitude());
-        String msg = "Latitude : " + curPoint.latitude
-                + "\nLongitude : " + curPoint.longitude;
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-
-        //지도에 표시할 때 필요함
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15));
 
         //마커 찍기
-        Location targetLocation = new Location("");
-        targetLocation.setLatitude(35.153817);
-        targetLocation.setLongitude(126.8889);
-        showMyMarker(targetLocation);
-    }
+        LatLng lastLocationPlaced = new LatLng(35.153817, 126.8889);
 
-    private void showMyMarker(Location location){
-        if(myMarker == null){
-            myMarker = new MarkerOptions();
-            myMarker.position(
-                    new LatLng(location.getLatitude(), location.getLongitude()));
-            myMarker.title("♨ 내 위치\n");
-            myMarker.snippet("여기가 어디인가");//간단하게 설명해주는 것
-            myMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.mylocation));
-            map.addMarker(myMarker);
+        for(Location loc : savedLocations){
+            LatLng latLng =  new LatLng(loc.getLatitude(), loc.getLongitude());
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(latLng);
+            markerOptions.title("Lat : " + loc.getLatitude() +" Lon : " + loc.getLongitude());
+            map.addMarker(markerOptions);
+            lastLocationPlaced = latLng;
         }
+
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(lastLocationPlaced, 15));
+
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                //마커가 클릭된 횟수 구하기
+                Integer clicks = (Integer) marker.getTag();
+                if(clicks == null){
+                    clicks = 0;
+                }
+                clicks++;
+                marker.setTag(clicks);
+                Toast.makeText(MainActivity.this, "Marker : " +marker.getTitle() + " 클릭됨 " + marker.getTag() + "번", Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+        });
     }
 }//MainActivity

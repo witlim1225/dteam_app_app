@@ -46,18 +46,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
 
-    <Button
-        android:id="@+id/btnAddPerson1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="친구1"
-        app:backgroundTint="#E13737"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+    <ImageView
+        android:id="@+id/tv_profile"
+        android:layout_width="134dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMyLoc"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <Button
         android:id="@+id/btnAddPerson2"
@@ -67,10 +65,10 @@
         app:backgroundTint="#E13737"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.827" />
 
     <Button
         android:id="@+id/btnAddPerson3"
@@ -80,29 +78,44 @@
         app:backgroundTint="#E13737"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.827" />
 
     <Button
-        android:id="@+id/btnGroupTalk"
-        android:layout_width="82dp"
-        android:layout_height="41dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="450dp"
-        android:text="그룹톡"
-        android:textSize="12sp"
+        android:id="@+id/btnAddPerson1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="친구1"
+        app:backgroundTint="#E13737"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.827" />
 
     <Button
         android:id="@+id/btnAddPerson"
         android:layout_width="82dp"
         android:layout_height="41dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="384dp"
         android:text="친구추가"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGroupTalk"
+        android:layout_width="82dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="332dp"
+        android:text="그룹톡"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -111,27 +124,16 @@
         android:id="@+id/tv_result"
         android:layout_width="134dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
         android:text="닉네임text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
-    <ImageView
-        android:id="@+id/tv_profile"
-        android:layout_width="134dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginLeft="136dp"
-        android:layout_marginTop="160dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMyLoc"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <LinearLayout
         android:layout_width="404dp"
-        android:layout_height="329dp"
+        android:layout_height="200dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,12 +141,22 @@
 
         <fragment
             android:id="@+id/googleMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnGpsTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="GpsTrack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMyLoc" />
 
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>
